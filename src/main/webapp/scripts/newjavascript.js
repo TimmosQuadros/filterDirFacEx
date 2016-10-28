@@ -131,6 +131,34 @@ app.controller('RestEuCountriesController', ["$scope", "RestEuCountriesFactory",
         };
 }]);
 
+app.filter('Chess', function () {
+    return function (input) {
+        var out;
+        switch (input) {
+            case "wr":
+                out = "\u2656";
+                break;
+            case "wkn":
+                out = "\u2658";
+                break;
+            case "wb":
+                out = "\u2657";
+                break;
+            case "wq":
+                out = "\u2654";
+                break;
+            case "wk":
+                out = "\u2655";
+        }
+        return out;
+    }
+});
+
+
+app.controller("ChessCtrl", function ($scope) {
+    $scope.board = ["wr", "wkn", "wb", "wq", "wk", "wb", "wkn", "wr"];
+});
+
 
 
 
